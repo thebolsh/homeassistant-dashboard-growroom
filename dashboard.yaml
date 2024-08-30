@@ -1,0 +1,590 @@
+views:
+  - title: Dashboard
+    cards:
+      - type: vertical-stack
+        cards:
+          - show_state: false
+            show_name: false
+            camera_view: live
+            type: picture-entity
+            entity: camera.wyze_grow_room
+            image: https://wyze-bridge.home.network.com/snapshot/grow-room.jpg
+            camera_image: camera.wyze_grow_room
+          - type: horizontal-stack
+            cards:
+              - type: custom:canvas-gauge-card
+                entity: sensor.grow_room_canopy_temperature_combined
+                card_height: 200
+                gauge:
+                  type: radial-gauge
+                  title: Canopy Temp
+                  width: 200
+                  height: 200
+                  animationDuration: 1500
+                  animationRule: linear
+                  fontTitleSize: 35
+                  fontUnitsSize: 35
+                  fontTitleStyle: bold
+                  units: ˚C
+                  borderShadowWidth: 0
+                  borderOuterWidth: 0
+                  borderMiddleWidth: 0
+                  borderInnerWidth: 0
+                  minValue: 0
+                  maxValue: 40
+                  valueBox: true
+                  valueInt: 2
+                  valueDec: 1
+                  dropshadow: true
+                  majorTicks:
+                    - '0'
+                    - '5'
+                    - '10'
+                    - '15'
+                    - '20'
+                    - '25'
+                    - '30'
+                    - '35'
+                    - '40'
+                  minorTicks: 5
+                  strokeTicks: true
+                  highlights:
+                    - from: 0
+                      to: 15
+                      color: blue
+                    - from: 15
+                      to: 20
+                      color: lightblue
+                    - from: 20
+                      to: 28
+                      color: green
+                    - from: 28
+                      to: 31
+                      color: orange
+                    - from: 31
+                      to: 40
+                      color: red
+                  borders: false
+              - type: custom:canvas-gauge-card
+                entity: sensor.grow_room_canopy_humidity_combined
+                gauge:
+                  type: radial-gauge
+                  title: Canopy Humidity
+                  width: 200
+                  height: 200
+                  fontTitleSize: 35
+                  fontUnitsSize: 35
+                  fontTitleStyle: bold
+                  units: '%'
+                  borderShadowWidth: 1
+                  borderOuterWidth: 1
+                  borderMiddleWidth: 1
+                  borderInnerWidth: 1
+                  minValue: 0
+                  maxValue: 100
+                  valueBox: true
+                  valueInt: 2
+                  valueDec: 1
+                  dropshadow: true
+                  majorTicks:
+                    - '0'
+                    - '10'
+                    - '20'
+                    - '30'
+                    - '40'
+                    - '50'
+                    - '60'
+                    - '70'
+                    - '80'
+                    - '90'
+                    - '100'
+                  minorTicks: 10
+                  strokeTicks: true
+                  highlights:
+                    - from: 0
+                      to: 40
+                      color: red
+                    - from: 40
+                      to: 50
+                      color: orange
+                    - from: 50
+                      to: 65
+                      color: lightgreen
+                    - from: 65
+                      to: 75
+                      color: green
+                    - from: 75
+                      to: 85
+                      color: blue
+                    - from: 85
+                      to: 100
+                      color: red
+                  borders: false
+          - type: horizontal-stack
+            cards:
+              - type: custom:canvas-gauge-card
+                entity: sensor.gw2000a_temperature_1
+                gauge:
+                  type: radial-gauge
+                  title: Ground Temp
+                  width: 200
+                  height: 200
+                  fontTitleSize: 35
+                  fontUnitsSize: 35
+                  fontTitleStyle: bold
+                  units: ˚C
+                  borderShadowWidth: 1
+                  borderOuterWidth: 1
+                  borderMiddleWidth: 1
+                  borderInnerWidth: 1
+                  minValue: 0
+                  maxValue: 40
+                  valueBox: true
+                  valueInt: 2
+                  valueDec: 1
+                  dropshadow: true
+                  majorTicks:
+                    - '0'
+                    - '5'
+                    - '10'
+                    - '15'
+                    - '20'
+                    - '25'
+                    - '30'
+                    - '35'
+                    - '40'
+                  minorTicks: 5
+                  strokeTicks: true
+                  highlights:
+                    - from: 0
+                      to: 10
+                      color: blue
+                    - from: 10
+                      to: 25
+                      color: lightblue
+                    - from: 15
+                      to: 25
+                      color: green
+                    - from: 25
+                      to: 30
+                      color: orange
+                    - from: 30
+                      to: 40
+                      color: red
+                  borders: false
+              - type: custom:canvas-gauge-card
+                entity: sensor.gw2000a_humidity_1
+                gauge:
+                  type: radial-gauge
+                  title: Ground Humidity
+                  width: 200
+                  height: 200
+                  fontTitleSize: 35
+                  fontUnitsSize: 35
+                  fontTitleStyle: bold
+                  units: '%'
+                  borderShadowWidth: 1
+                  borderOuterWidth: 1
+                  borderMiddleWidth: 1
+                  borderInnerWidth: 1
+                  minValue: 0
+                  maxValue: 100
+                  valueBox: true
+                  valueInt: 2
+                  valueDec: 1
+                  dropshadow: true
+                  majorTicks:
+                    - '0'
+                    - '10'
+                    - '20'
+                    - '30'
+                    - '40'
+                    - '50'
+                    - '60'
+                    - '70'
+                    - '80'
+                    - '90'
+                    - '100'
+                  minorTicks: 10
+                  strokeTicks: true
+                  highlights:
+                    - from: 0
+                      to: 40
+                      color: red
+                    - from: 40
+                      to: 55
+                      color: orange
+                    - from: 50
+                      to: 90
+                      color: green
+                    - from: 90
+                      to: 100
+                      color: blue
+                  borders: false
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: Soil Moisture
+          - type: horizontal-stack
+            cards:
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_1
+                name: Girl Scout Cookies 1
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_2
+                name: Girl Scout Cookies 2
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+          - type: horizontal-stack
+            cards:
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_3
+                name: OG Kush 1
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_5
+                name: OG Kush 2
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: Power and Energy
+          - type: horizontal-stack
+            cards:
+              - graph: none
+                type: sensor
+                entity: sensor.grow_room_power_group
+                detail: 2
+                name: Power Usage
+                hours_to_show: 6
+                unit: W
+                icon: mdi:power-plug
+              - type: statistic
+                entity: sensor.grow_room_energy_group
+                period:
+                  calendar:
+                    period: day
+                    offset: -1
+                stat_type: change
+                name: Daily Usage
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: binary_sensor.dehumidifier_power_status
+                name: Dehumid
+                state_color: true
+              - type: entity
+                entity: sensor.main_grow_light_current_power
+                icon: mdi:lightbulb
+                state_color: true
+                name: Main Light
+              - type: entity
+                entity: sensor.uv_light_bars_current_power
+                icon: mdi:lightbulb-fluorescent-tube
+                state_color: true
+                name: UV Bars
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: sensor.cloudline_t6_current_power
+                icon: mdi:fan
+                state_color: true
+                name: Extract Fan
+              - type: entity
+                entity: binary_sensor.heating_mats_power_status
+                name: Heat Mats
+                state_color: true
+                icon: mdi:heat-wave
+              - type: entity
+                entity: sensor.circulation_fan_current_power
+                icon: mdi:fan
+                state_color: true
+                name: Circ Fans
+          - type: entities
+            entities:
+              - entity: sensor.grow_room_cost_hourly_new
+                name: This Hour (so far)
+              - entity: sensor.grow_room_cost_last_hour_new
+                name: Last Hour
+              - entity: sensor.grow_room_cost_daily_new
+                name: Today (so far)
+              - entity: sensor.grow_room_cost_yesterday_new
+                name: Yesterday
+              - entity: sensor.grow_room_cost_weekly_new
+                name: This Week (so far)
+              - entity: sensor.grow_room_cost_last_week_new
+                name: Last Week
+              - entity: sensor.grow_room_cost_total_new
+                name: Total
+            title: Energy Cost
+            show_header_toggle: false
+            state_color: false
+            card_mod:
+              style:
+                .: |
+                  #states > * {
+                    margin: -8px 0px !important;
+                    font-size: 14px;
+                    --mdc-icon-size: 24px; 
+                  }
+                  .card-header {
+                    font-size: 24px;
+                    line-height: 26px;
+                  }
+      - type: custom:vpdchart-card
+        crop: Cannabis
+        title: VPD Chart (Sensor Average)
+        air_rh: sensor.grow_room_canopy_humidity_combined
+        air_temp: sensor.grow_room_canopy_temperature_combined
+        leaf_temp: sensor.grow_room_canopy_temperature_combined
+        leaf_temp_offset: -2
+    type: custom:masonry-layout
+  - title: Control
+    path: control
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: AC Infinity Controller 69 Pro
+          - type: entities
+            entities:
+              - entity: sensor.bud_box_pro_humidity
+                name: Humidity
+              - entity: sensor.bud_box_pro_temperature
+                name: Temperature
+              - entity: sensor.bud_box_pro_vpd
+                name: VPD
+            show_header_toggle: false
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: AC Infinity Cloudline T6 Extract Fan
+          - type: entities
+            entities:
+              - entity: binary_sensor.cloudline_t6_status
+                name: Status
+              - entity: select.cloudline_t6_active_mode
+                name: Extract Fan Mode
+              - entity: sensor.cloudline_t6_current_power
+                name: Extract Fan Level
+                icon: ''
+              - entity: number.cloudline_t6_off_power
+                name: Off (Min) Power
+              - entity: number.cloudline_t6_on_power
+                name: On (Max) Power
+              - entity: time.cloudline_t6_scheduled_off_time
+                name: Scheduled Off Time
+              - entity: switch.cloudline_t6_scheduled_off_time_enabled
+                name: Shceduled Off Time Enabled
+              - entity: time.cloudline_t6_scheduled_on_time
+                name: Scheduled On Time
+              - entity: switch.cloudline_t6_scheduled_on_time_enabled
+                name: Scheduled On Time Enabled
+              - entity: number.cloudline_t6_temperature_high_trigger
+                name: High Temperature Trigger
+              - entity: switch.cloudline_t6_temperature_high_trigger_enabled
+                name: Temperature High Trigger Enabled
+              - entity: number.cloudline_t6_temperature_low_trigger
+                name: Low Temperature Trigger
+              - entity: switch.cloudline_t6_temperature_low_trigger_enabled
+                name: Low Temperature Trigger Enabled
+              - entity: number.cloudline_t6_humidity_high_trigger
+                name: High Humidity Trigger
+              - entity: switch.cloudline_t6_humidity_high_trigger_enabled
+                name: High Humidity Trigger Enabled
+              - entity: number.cloudline_t6_humidity_low_trigger
+                name: Low Humidity Trigger
+              - entity: switch.cloudline_t6_humidity_low_trigger_enabled
+                name: Low Humidity Trigger Enabled
+              - entity: number.cloudline_t6_vpd_high_trigger
+                name: VPD High Trigger
+              - entity: switch.cloudline_t6_vpd_high_trigger_enabled
+                name: VPD High Trigger Enabled
+              - entity: number.cloudline_t6_vpd_low_trigger
+                name: VPD Low Trigger
+              - entity: switch.cloudline_t6_vpd_low_trigger_enabled
+                name: VPD Low Trigger Enabled
+      - type: entities
+        entities:
+          - entity: select.main_grow_light_active_mode
+            name: Active Mode
+          - entity: number.main_grow_light_cycle_minutes_off
+            name: Cycle Minutes Off
+          - entity: number.main_grow_light_cycle_minutes_on
+            name: Cycle Minutes On
+          - entity: number.main_grow_light_humidity_high_trigger
+            name: Humidity High Trigger
+          - entity: switch.main_grow_light_humidity_high_trigger_enabled
+            name: Humidity High Trigger Enabled
+          - entity: number.main_grow_light_humidity_low_trigger
+            name: Humidity Low Trigger
+          - entity: switch.main_grow_light_humidity_low_trigger_enabled
+            name: Humidity Low Trigger Enabled
+          - entity: number.main_grow_light_off_power
+            name: Off Power
+          - entity: number.main_grow_light_on_power
+            name: On Power
+          - entity: time.main_grow_light_scheduled_off_time
+            name: Scheduled Off-Time
+          - entity: switch.main_grow_light_scheduled_off_time_enabled
+            name: Scheduled Off-Time Enabled
+          - entity: time.main_grow_light_scheduled_on_time
+            name: Scheduled On-Time
+          - entity: switch.main_grow_light_scheduled_on_time_enabled
+            name: Scheduled On-Time Enabled
+          - entity: number.main_grow_light_temperature_high_trigger
+            name: Temperature High Trigger
+          - entity: switch.main_grow_light_temperature_high_trigger_enabled
+            name: Temperature High Trigger Enabled
+          - entity: number.main_grow_light_temperature_low_trigger
+            name: Temperature Low Trigger
+          - entity: switch.main_grow_light_temperature_low_trigger_enabled
+            name: Temperature Low Trigger Enabled
+          - entity: number.main_grow_light_timer_minutes_to_off
+            name: Timer Minutes to Off
+          - entity: number.main_grow_light_timer_minutes_to_on
+            name: Timer Minutes to On
+          - entity: number.main_grow_light_vpd_high_trigger
+            name: VPD High Trigger
+          - entity: switch.main_grow_light_vpd_high_trigger_enabled
+            name: VPD High Trigger Enabled
+          - entity: number.main_grow_light_vpd_low_trigger
+            name: VPD Low Trigger
+          - entity: switch.main_grow_light_vpd_low_trigger_enabled
+            name: VPD Low Trigger Enabled
+        title: Main Grow Light
+      - type: entities
+        entities:
+          - entity: select.circulation_fan_active_mode
+            name: Active Mode
+          - entity: number.circulation_fan_cycle_minutes_off
+            name: Cycle Minutes Off
+          - entity: number.circulation_fan_cycle_minutes_on
+            name: Cycle Minutes On
+          - entity: number.circulation_fan_humidity_high_trigger
+            name: Humidity High Trigger
+          - entity: switch.circulation_fan_humidity_high_trigger_enabled
+            name: Humidity High Trigger Enabled
+          - entity: number.circulation_fan_humidity_low_trigger
+            name: Humidity Low Trigger
+          - entity: switch.circulation_fan_humidity_low_trigger_enabled
+            name: Humidity Low Trigger Enabled
+          - entity: number.circulation_fan_off_power
+            name: Off Power
+          - entity: number.circulation_fan_on_power
+            name: On Power
+          - entity: time.circulation_fan_scheduled_off_time
+            name: Scheduled Off-Time
+          - entity: switch.circulation_fan_scheduled_off_time_enabled
+            name: Scheduled Off-Time Enabled
+          - entity: time.circulation_fan_scheduled_on_time
+            name: Scheduled On-Time
+          - entity: switch.circulation_fan_scheduled_on_time_enabled
+            name: Scheduled On-Time Enabled
+          - entity: number.circulation_fan_temperature_high_trigger
+            name: Temperature High Trigger
+          - entity: switch.circulation_fan_temperature_high_trigger_enabled
+            name: Temperature High Trigger Enabled
+          - entity: number.circulation_fan_temperature_low_trigger
+            name: Temperature Low Trigger
+          - entity: switch.circulation_fan_temperature_low_trigger_enabled
+            name: Temperature Low Trigger Enabled
+          - entity: number.circulation_fan_timer_minutes_to_off
+            name: Timer Minutes to Off
+          - entity: number.circulation_fan_timer_minutes_to_on
+            name: Timer Minutes to On
+          - entity: number.circulation_fan_vpd_high_trigger
+            name: VPD High Trigger
+          - entity: switch.circulation_fan_vpd_high_trigger_enabled
+            name: VPD High Trigger Enabled
+          - entity: number.circulation_fan_vpd_low_trigger
+            name: VPD Low Trigger
+          - entity: switch.circulation_fan_vpd_low_trigger_enabled
+            name: VPD Low Trigger Enabled
+        title: Circulation Fan
+      - type: entities
+        entities:
+          - entity: select.uv_light_bars_active_mode
+            name: Active Mode
+          - entity: number.uv_light_bars_cycle_minutes_off
+            name: Cycle Minutes Off
+          - entity: number.uv_light_bars_cycle_minutes_on
+            name: Cycle Minutes On
+          - entity: number.uv_light_bars_humidity_high_trigger
+            name: Humidity High Trigger
+          - entity: switch.uv_light_bars_humidity_high_trigger_enabled
+            name: Humidity High Trigger Enabled
+          - entity: number.uv_light_bars_humidity_low_trigger
+            name: Humidity Low Trigger
+          - entity: switch.uv_light_bars_humidity_low_trigger_enabled
+            name: Humidity Low Trigger Enabled
+          - entity: number.uv_light_bars_off_power
+            name: Off Power
+          - entity: number.uv_light_bars_on_power
+            name: On Power
+          - entity: time.uv_light_bars_scheduled_off_time
+            name: Scheduled Off-Time
+          - entity: switch.uv_light_bars_scheduled_off_time_enabled
+            name: Scheduled Off-Time Enabled
+          - entity: time.uv_light_bars_scheduled_on_time
+            name: Scheduled On-Time
+          - entity: switch.uv_light_bars_scheduled_on_time_enabled
+            name: Scheduled On-Time Enabled
+          - entity: number.uv_light_bars_temperature_high_trigger
+            name: Temperature High Trigger
+          - entity: switch.uv_light_bars_temperature_high_trigger_enabled
+            name: Temperature High Trigger Enabled
+          - entity: number.uv_light_bars_temperature_low_trigger
+            name: Temperature Low Trigger
+          - entity: switch.uv_light_bars_temperature_low_trigger_enabled
+            name: Temperature Low Trigger Enabled
+          - entity: number.uv_light_bars_timer_minutes_to_off
+            name: Timer Minutes to Off
+          - entity: number.uv_light_bars_timer_minutes_to_on
+            name: Timer Minutes to On
+          - entity: number.uv_light_bars_vpd_high_trigger
+            name: VPD High Trigger
+          - entity: switch.uv_light_bars_vpd_high_trigger_enabled
+            name: VPD High Trigger Enabled
+          - entity: number.uv_light_bars_vpd_low_trigger
+            name: VPD Low Trigger
+          - entity: switch.uv_light_bars_vpd_low_trigger_enabled
+            name: VPD Low Trigger Enabled
+        title: UV Light Bars
+
