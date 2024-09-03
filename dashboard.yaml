@@ -10,250 +10,156 @@ views:
             entity: camera.wyze_grow_room
             image: https://wyze-bridge.home.network.com/snapshot/grow-room.jpg
             camera_image: camera.wyze_grow_room
-          - type: horizontal-stack
+          - type: custom:mushroom-title-card
+            title: Environment
+          - square: true
+            type: grid
+            columns: 2
             cards:
-              - type: custom:canvas-gauge-card
-                entity: sensor.grow_room_canopy_temperature_combined
-                card_height: 200
-                gauge:
-                  type: radial-gauge
-                  title: Canopy Temp
-                  width: 200
-                  height: 200
-                  animationDuration: 1500
-                  animationRule: linear
-                  fontTitleSize: 35
-                  fontUnitsSize: 35
-                  fontTitleStyle: bold
-                  units: ˚C
-                  borderShadowWidth: 0
-                  borderOuterWidth: 0
-                  borderMiddleWidth: 0
-                  borderInnerWidth: 0
-                  minValue: 0
-                  maxValue: 40
-                  valueBox: true
-                  valueInt: 2
-                  valueDec: 1
-                  dropshadow: true
-                  majorTicks:
-                    - '0'
-                    - '5'
-                    - '10'
-                    - '15'
-                    - '20'
-                    - '25'
-                    - '30'
-                    - '35'
-                    - '40'
-                  minorTicks: 5
-                  strokeTicks: true
-                  highlights:
-                    - from: 0
-                      to: 15
-                      color: blue
-                    - from: 15
-                      to: 20
-                      color: lightblue
-                    - from: 20
-                      to: 28
-                      color: green
-                    - from: 28
-                      to: 31
-                      color: orange
-                    - from: 31
-                      to: 40
-                      color: red
-                  borders: false
-              - type: custom:canvas-gauge-card
-                entity: sensor.grow_room_canopy_humidity_combined
-                gauge:
-                  type: radial-gauge
-                  title: Canopy Humidity
-                  width: 200
-                  height: 200
-                  fontTitleSize: 35
-                  fontUnitsSize: 35
-                  fontTitleStyle: bold
-                  units: '%'
-                  borderShadowWidth: 1
-                  borderOuterWidth: 1
-                  borderMiddleWidth: 1
-                  borderInnerWidth: 1
-                  minValue: 0
-                  maxValue: 100
-                  valueBox: true
-                  valueInt: 2
-                  valueDec: 1
-                  dropshadow: true
-                  majorTicks:
-                    - '0'
-                    - '10'
-                    - '20'
-                    - '30'
-                    - '40'
-                    - '50'
-                    - '60'
-                    - '70'
-                    - '80'
-                    - '90'
-                    - '100'
-                  minorTicks: 10
-                  strokeTicks: true
-                  highlights:
-                    - from: 0
-                      to: 40
-                      color: red
-                    - from: 40
-                      to: 50
-                      color: orange
-                    - from: 50
-                      to: 65
-                      color: lightgreen
-                    - from: 65
-                      to: 75
-                      color: green
-                    - from: 75
-                      to: 85
-                      color: blue
-                    - from: 85
-                      to: 100
-                      color: red
-                  borders: false
-          - type: horizontal-stack
-            cards:
-              - type: custom:canvas-gauge-card
-                entity: sensor.gw2000a_temperature_1
-                gauge:
-                  type: radial-gauge
-                  title: Ground Temp
-                  width: 200
-                  height: 200
-                  fontTitleSize: 35
-                  fontUnitsSize: 35
-                  fontTitleStyle: bold
-                  units: ˚C
-                  borderShadowWidth: 1
-                  borderOuterWidth: 1
-                  borderMiddleWidth: 1
-                  borderInnerWidth: 1
-                  minValue: 0
-                  maxValue: 40
-                  valueBox: true
-                  valueInt: 2
-                  valueDec: 1
-                  dropshadow: true
-                  majorTicks:
-                    - '0'
-                    - '5'
-                    - '10'
-                    - '15'
-                    - '20'
-                    - '25'
-                    - '30'
-                    - '35'
-                    - '40'
-                  minorTicks: 5
-                  strokeTicks: true
-                  highlights:
-                    - from: 0
-                      to: 10
-                      color: blue
-                    - from: 10
-                      to: 25
-                      color: lightblue
-                    - from: 15
-                      to: 25
-                      color: green
-                    - from: 25
-                      to: 30
-                      color: orange
-                    - from: 30
-                      to: 40
-                      color: red
-                  borders: false
-              - type: custom:canvas-gauge-card
-                entity: sensor.gw2000a_humidity_1
-                gauge:
-                  type: radial-gauge
-                  title: Ground Humidity
-                  width: 200
-                  height: 200
-                  fontTitleSize: 35
-                  fontUnitsSize: 35
-                  fontTitleStyle: bold
-                  units: '%'
-                  borderShadowWidth: 1
-                  borderOuterWidth: 1
-                  borderMiddleWidth: 1
-                  borderInnerWidth: 1
-                  minValue: 0
-                  maxValue: 100
-                  valueBox: true
-                  valueInt: 2
-                  valueDec: 1
-                  dropshadow: true
-                  majorTicks:
-                    - '0'
-                    - '10'
-                    - '20'
-                    - '30'
-                    - '40'
-                    - '50'
-                    - '60'
-                    - '70'
-                    - '80'
-                    - '90'
-                    - '100'
-                  minorTicks: 10
-                  strokeTicks: true
-                  highlights:
-                    - from: 0
-                      to: 40
-                      color: red
-                    - from: 40
-                      to: 55
-                      color: orange
-                    - from: 50
-                      to: 90
-                      color: green
-                    - from: 90
-                      to: 100
-                      color: blue
-                  borders: false
+              - type: gauge
+                entity: sensor.bud_box_pro_temperature
+                name: Temperature (ACI)
+                unit: °C
+                needle: true
+                segments:
+                  - from: 0
+                    color: blue
+                  - from: 15
+                    color: lightblue
+                  - from: 18
+                    color: lightgreen
+                  - from: 21
+                    color: green
+                  - from: 29
+                    color: lightgreen
+                  - from: 32
+                    color: red
+                min: 10
+                max: 40
+              - type: gauge
+                entity: sensor.bud_box_pro_humidity
+                name: Humidity (ACI)
+                needle: true
+                segments:
+                  - from: 0
+                    color: red
+                  - from: 45
+                    color: orange
+                  - from: 55
+                    color: lightgreen
+                  - from: 65
+                    color: green
+                  - from: 75
+                    color: lightgreen
+                  - from: 80
+                    color: blue
+                unit: '%'
+              - type: gauge
+                entity: sensor.gw2000a_indoor_temperature
+                name: Temperature (Ecowitt)
+                unit: °C
+                needle: true
+                segments:
+                  - from: 0
+                    color: blue
+                  - from: 15
+                    color: lightblue
+                  - from: 18
+                    color: lightgreen
+                  - from: 21
+                    color: green
+                  - from: 29
+                    color: lightgreen
+                  - from: 32
+                    color: red
+                min: 10
+                max: 40
+              - type: gauge
+                entity: sensor.gw2000a_indoor_humidity
+                name: Humidity (Ecowitt)
+                unit: '%'
+                needle: true
+                segments:
+                  - from: 0
+                    color: red
+                  - from: 45
+                    color: orange
+                  - from: 55
+                    color: lightgreen
+                  - from: 65
+                    color: green
+                  - from: 75
+                    color: lightgreen
+                  - from: 80
+                    color: blue
+            title: Sensors
+          - type: entities
+            entities:
+              - entity: input_number.grow_room_temp_target_lights_on
+                name: Temp - Lights On
+                icon: mdi:alarm-light-outline
+              - entity: input_number.grow_room_temp_target_lights_off
+                name: Temp - Lights Off
+                icon: mdi:alarm-light-off-outline
+            title: Targets
+        title: Camera
       - type: vertical-stack
         cards:
           - type: custom:mushroom-title-card
-            title: Soil Moisture
-          - type: horizontal-stack
-            cards:
-              - type: gauge
-                entity: sensor.gw2000a_soil_moisture_1
-                name: Girl Scout Cookies 1
-                needle: true
-                segments:
-                  - from: 0
-                    color: var(--error-color)
-                  - from: 20
-                    color: var(--warning-color)
-                  - from: 30
-                    color: var(--success-color)
-                  - from: 65
-                    color: var(--info-color)
-              - type: gauge
-                entity: sensor.gw2000a_soil_moisture_2
-                name: Girl Scout Cookies 2
-                needle: true
-                segments:
-                  - from: 0
-                    color: var(--error-color)
-                  - from: 20
-                    color: var(--warning-color)
-                  - from: 30
-                    color: var(--success-color)
-                  - from: 65
-                    color: var(--info-color)
-          - type: horizontal-stack
+            title: VPD
+          - type: custom:ha-vpd-chart
+            vpd_phases:
+              - upper: 0
+                className: gray-danger-zone
+                color: '#999999'
+              - lower: 0
+                upper: 0.4
+                className: under-transpiration
+                color: '#1a6c9c'
+              - lower: 0.4
+                upper: 0.8
+                className: early-veg
+                color: '#22ab9c'
+              - lower: 0.8
+                upper: 1.2
+                className: late-veg
+                color: '#9cc55b'
+              - lower: 1.2
+                upper: 1.6
+                className: mid-late-flower
+                color: '#e7c12b'
+              - lower: 1.6
+                className: danger-zone
+                color: '#ce4234'
+            sensors:
+              - humidity: sensor.bud_box_pro_humidity
+                name: ACI
+                temperature: sensor.bud_box_pro_temperature
+            is_bar_view: false
+            min_humidity: 20
+            max_humidity: 90
+            leaf_temperature_offset: 2
+            enable_tooltip: true
+            air_text: Air
+            rh_text: RH
+            kpa_text: kPa
+            enable_axes: true
+            enable_ghostclick: true
+            enable_ghostmap: true
+            enable_triangle: true
+            enable_crosshair: true
+            enable_fahrenheit: false
+            enable_zoom: true
+            enable_show_always_informations: true
+            enable_legend: true
+            ghostmap_hours: 24
+            unit_temperature: °C
+            max_temperature: 40
+            min_temperature: 10
+            min_height: 375
+          - square: true
+            type: grid
+            columns: 2
             cards:
               - type: gauge
                 entity: sensor.gw2000a_soil_moisture_3
@@ -281,6 +187,33 @@ views:
                     color: var(--success-color)
                   - from: 65
                     color: var(--info-color)
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_1
+                name: Girl Scout Cookies 1
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+              - type: gauge
+                entity: sensor.gw2000a_soil_moisture_2
+                name: Girl Scout Cookies 2
+                needle: true
+                segments:
+                  - from: 0
+                    color: var(--error-color)
+                  - from: 20
+                    color: var(--warning-color)
+                  - from: 30
+                    color: var(--success-color)
+                  - from: 65
+                    color: var(--info-color)
+            title: Soil Moisture
       - type: vertical-stack
         cards:
           - type: custom:mushroom-title-card
@@ -296,24 +229,21 @@ views:
                 unit: W
                 icon: mdi:power-plug
               - type: statistic
-                entity: sensor.grow_room_energy_group
+                entity: sensor.grow_room_energy_usage_total
                 period:
                   calendar:
                     period: day
                     offset: -1
                 stat_type: change
-                name: Daily Usage
+                name: Usage Yesterday
+                unit: kWh
           - type: horizontal-stack
             cards:
-              - type: entity
-                entity: binary_sensor.dehumidifier_power_status
-                name: Dehumid
-                state_color: true
               - type: entity
                 entity: sensor.main_grow_light_current_power
                 icon: mdi:lightbulb
                 state_color: true
-                name: Main Light
+                name: Main Light Power
               - type: entity
                 entity: sensor.uv_light_bars_current_power
                 icon: mdi:lightbulb-fluorescent-tube
@@ -321,21 +251,36 @@ views:
                 name: UV Bars
           - type: horizontal-stack
             cards:
+              - type: horizontal-stack
+                cards:
+                  - type: entity
+                    entity: sensor.circulation_fan_current_power
+                    icon: mdi:fan
+                    state_color: true
+                    name: Circulation Fans
+                  - type: entity
+                    entity: sensor.cloudline_t6_current_power
+                    icon: mdi:fan
+                    state_color: true
+                    name: Extract Fan
+          - type: horizontal-stack
+            cards:
               - type: entity
-                entity: sensor.cloudline_t6_current_power
-                icon: mdi:fan
-                state_color: true
-                name: Extract Fan
-              - type: entity
-                entity: binary_sensor.heating_mats_power_status
-                name: Heat Mats
+                entity: binary_sensor.heating_mats_heating_status
                 state_color: true
                 icon: mdi:heat-wave
+                name: Heat Mats
               - type: entity
-                entity: sensor.circulation_fan_current_power
-                icon: mdi:fan
+                entity: binary_sensor.heat_tubes_heating_status
                 state_color: true
-                name: Circ Fans
+                icon: mdi:heat-wave
+                name: Heat Tubes
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: binary_sensor.dehumidifier_power_status
+                name: Dehumidifier
+                state_color: true
           - type: entities
             entities:
               - entity: sensor.grow_room_cost_hourly_new
@@ -367,13 +312,6 @@ views:
                     font-size: 24px;
                     line-height: 26px;
                   }
-      - type: custom:vpdchart-card
-        crop: Cannabis
-        title: VPD Chart (Sensor Average)
-        air_rh: sensor.grow_room_canopy_humidity_combined
-        air_temp: sensor.grow_room_canopy_temperature_combined
-        leaf_temp: sensor.grow_room_canopy_temperature_combined
-        leaf_temp_offset: -2
     type: custom:masonry-layout
   - title: Control
     path: control
@@ -587,4 +525,3 @@ views:
           - entity: switch.uv_light_bars_vpd_low_trigger_enabled
             name: VPD Low Trigger Enabled
         title: UV Light Bars
-
