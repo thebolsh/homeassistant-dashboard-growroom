@@ -1,5 +1,7 @@
 # Grow Room Dashboard
 
+![Alt text](/Screenshot.png?raw=true "Screenshot")
+
 ## Hardware
 
 Extract Fan and Controller - AC Infinity T6 - AC Infinity Integration
